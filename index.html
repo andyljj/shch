@@ -1,118 +1,25 @@
 ---
 layout: default
+xsqt: true
 ---
 
-<!-- Page Header -->
-<div class="row">
-    <div class="col-lg-12">
-        <h1 class="page-header">Page Heading
-            <small>Secondary Text</small>
-        </h1>
-    </div>
-</div>
-<!-- /.row -->
+<div class="col-md-8">
+    {% for post in site.posts %}
+        {% if post.xsqt %}
+            <h2>
+                <a class="title" href="{{ post.url | prepend: site.url }}">{{ post.title }}</a>
+            </h2>
+            <p><span class="glyphicon glyphicon-time meta"></span> {{ post.date | date: "%F" }}</p>
+            <p>{{post.excerpt}}</p>
+            <a  href="{{ post.url | prepend: site.url }}">Read More </a>
 
-<!-- Projects Row -->
-<div class="row">
-    <div class="col-md-4 portfolio-item">
-        <a href="#">
-            <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-        </a>
-        <h3>
-            <a href="#">Project Name</a>
-        </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-    </div>
-    <div class="col-md-4 portfolio-item">
-       
-    </div>
-    <div class="col-md-4 portfolio-item">
-        <a href="#">
-            <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-        </a>
-        <h3>
-            <a href="#">Project Name</a>
-        </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-    </div>
-</div>
-<!-- /.row -->
+            <hr>
 
-<!-- Projects Row -->
-<div class="row">
-    <div class="col-md-4 portfolio-item">
-        <a href="#">
-            <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-        </a>
-        <h3>
-            <a href="#">Project Name</a>
-        </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-    </div>
-    <div class="col-md-4 portfolio-item">
-        <a href="#">
-            <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-        </a>
-        <h3>
-            <a href="#">Project Name</a>
-        </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-    </div>
-    <div class="col-md-4 portfolio-item">
-        <a href="#">
-            <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-        </a>
-        <h3>
-            <a href="#">Project Name</a>
-        </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-    </div>
+        {% endif %}
+   {% endfor %}
+
 </div>
 
-<!-- Projects Row -->
-<div class="row">
-    <div class="col-md-4 portfolio-item">
-        <a href="#">
-            <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-        </a>
-        <h3>
-            <a href="#">Project Name</a>
-        </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-    </div>
-    <div class="col-md-4 portfolio-item">
-        <a href="#">
-            <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-        </a>
-        <h3>
-            <a href="#">Project Name</a>
-        </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-    </div>
-    <div class="col-md-4 portfolio-item">
-        <a href="#">
-            <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-        </a>
-        <h3>
-            <a href="#">Project Name</a>
-        </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-    </div>
-</div>
-<!-- /.row -->
 
-<hr>
-
-<!-- Pagination -->
-<div class="row text-center">
-    <div class="col-lg-12">
-        <ul class="pagination">
-            <li>
-                <a href="{{ "/2.html" | prepend: site.url }}">下一页</a>
-            </li>
-        </ul>
-    </div>
-</div>
-<!-- /.row -->
-
-
+<!-- advertising board -->
+{% include adboard.html %}

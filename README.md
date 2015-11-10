@@ -1,1 +1,1 @@
-# shch
+# thepeople.github.io
